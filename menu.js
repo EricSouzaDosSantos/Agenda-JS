@@ -1,6 +1,7 @@
 import { createContact } from "./crud.js";
 import { listContact } from "./crud.js";
 import { updateContact } from "./crud.js";
+import { deleteContact } from "./crud.js";
 
 let repeticao = true
 
@@ -33,7 +34,14 @@ while (repeticao) {
         updateContact()
 
         break;
-        
+
+
+        case 4:
+
+        deleteContact()
+
+        break;
+
 
         case 5:
 

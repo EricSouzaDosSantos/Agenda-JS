@@ -110,9 +110,19 @@ export const updateContact = () => {
 export const deleteContact = () => {
 
     const findNumber = parseInt(prompt("Qual numero deseja atualizar"))
-    const foundContact = ArrayContact.find(number => number.numberContact == findNumber)
+    const foundContact = ArrayContact.findIndex(number => number.numberContact == findNumber)
 
 
+    if (!foundContact) {
+        alert("Usuario não encontrado")
+        return
+    }
+    
+    alert("Eba o usuario foi encontrado")
 
+    let confirm = window.confirm(`Você realmente deseja excluir o contato do numero ${findNumber}`)
+    if (confirm) {
+        ArrayContact.splice(foundContact, 1)
+    }
 
 }
