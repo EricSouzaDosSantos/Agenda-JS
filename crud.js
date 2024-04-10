@@ -6,9 +6,14 @@ export const createContact = () => {
     const nameContact = prompt("Qual o nome do contato:")
     const numberContact = parseInt(prompt("Qual o número do contato:"))
     const emailContact = prompt("Qual o email do contato:")
-    const dateCreation = Date()
+    const dateCreation = new Date().toLocaleDateString();
+    const day = new Date()
+    const hour = day.getHours();
+    const minutes = day.getMinutes();
+    const seconds = day.getSeconds();
+    const format = hour + ":" + minutes + ":" + seconds
 
-    ArrayContact.push({ nameContact, numberContact, emailContact, dateCreation })
+    ArrayContact.push({ nameContact, numberContact, emailContact, dateCreation, format })
     alert(ArrayContact)
 }
 
@@ -19,7 +24,7 @@ export const listContact = () => {
 
     ArrayContact.forEach((dataContact) => {
 
-        listContacts += ` nome: ${dataContact.nameContact} \n number: ${dataContact.numberContact} \n email: ${dataContact.emailContact} \n Data de criação: ${dataContact.dateCreation} \n ________________________________________ \n`
+        listContacts += ` nome: ${dataContact.nameContact} \n number: ${dataContact.numberContact} \n email: ${dataContact.emailContact} \n Data de criação: ${dataContact.dateCreation} \n Hora: ${dataContact.format} \n ________________________________________ \n`
 
     })
 
@@ -39,14 +44,14 @@ export const updateContact = () => {
     }
     alert("Eba foi encontrado")
 
-    let confirm = window.confirm("Deseja fazer outras atualizações?")
+    let confirm = window.confirm("tem certeza que deseja fazer atualizações?")
     if (confirm) {
 
         let entrada = true
 
         while (entrada) {
 
-            let opcao = parseInt(prompt(` que mais deseja atualizar:
+            let opcao = parseInt(prompt(` o que deseja atualizar:
         [1] -> Nome
         [2] -> Email
         [3] -> Numero
@@ -80,7 +85,7 @@ export const updateContact = () => {
 
                 case 3:
 
-                    const newNumber = prompt("Qual o novo numero")
+                    const newNumber = parseInt(prompt("Qual o novo numero"))
 
                     foundContact.numberContact = newNumber
 
@@ -109,20 +114,20 @@ export const updateContact = () => {
 //Delete
 export const deleteContact = () => {
 
-    const findNumber = parseInt(prompt("Qual numero deseja atualizar"))
-    const foundContact = ArrayContact.findIndex(number => number.numberContact == findNumber)
+    const findNumber = parseInt(prompt("Qual numero deseja deletar"))
+    const foundContactDelete = ArrayContact.indexOf(number => number.numberContact === findNumber)
 
-
-    if (!foundContact) {
-        alert("Usuario não encontrado")
-        return
+    alert(foundContactDelete)
+    if (!foundContactDelete) {
+        alert("contato não encontrado")
+        return;
     }
-    
-    alert("Eba o usuario foi encontrado")
+
+    alert("Eba o contato foi encontrado")
 
     let confirm = window.confirm(`Você realmente deseja excluir o contato do numero ${findNumber}`)
     if (confirm) {
-        ArrayContact.splice(foundContact, 1)
+        ArrayContact.splice(foundContactDelete, 1)
     }
 
 }
