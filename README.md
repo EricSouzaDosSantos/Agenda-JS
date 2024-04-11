@@ -31,18 +31,23 @@ Em seguida, é apresentado um menu com as opções de atualização disponíveis
 
 Após a atualização, o contato é atualizado no array `ArrayContact`.
 
-Para utilizar essa função, basta chamá-la quando o usuário desejar excluir um contato específico no seu projeto.
+## Delete
+
+A função `deleteContact` permite Deletar as informações de um contato existente. Ela solicita ao usuário o número do contato que deseja Deletar
+
+em seguida pede uma confirmação, perguntando se o usuario realmente deseja deletar aquele contato.
 
 ## Utilização
 
 Para utilizar esse código, você pode importar as funções exportadas e chamá-las de acordo com a função desejada. Por exemplo:
 
 ```
-import { createContact, listContact, updateContact } from './contatos.js';
+import { createContact, listContact, updateContact, deleteContact } from './crud.js';
 
 createContact(); // Cria um novo contato
 listContact(); // Lista todos os contatos existentes
 updateContact(); // Atualiza as informações de um contato
+deleteContact(); //Deleta as informações de um contato
 ```
 
-Lembre-se de que isso é apenas um exemplo de código, e é necessário implementar outras funcionalidades, como exclusão de contatos, validação dos dados inseridos e aprimoramentos diversos.
+Lembre-se de que isso é apenas um exemplo de código, e é necessário implementar outras funcionalidades, validação dos dados inseridos e aprimoramentos diversos.
