@@ -51,3 +51,14 @@ deleteContact(); //Deleta as informações de um contato
 ```
 
 Lembre-se de que isso é apenas um exemplo de código, e é necessário implementar outras funcionalidades, validação dos dados inseridos e aprimoramentos diversos.
+
+## Contribuição
+
+Este é um projeto de código aberto, então sinta-se à vontade para contribuir com sugestões, correções de bugs ou até mesmo novas funcionalidades. Todas as contribuições são bem-vindas!
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
+
+---
+
